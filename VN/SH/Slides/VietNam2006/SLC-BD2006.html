@@ -1,0 +1,185 @@
+<html>
+<head>
+  <title>DHVTCT1 - Viet Nam 2006</title>				  
+  <link rel="STYLESHEET" href="https://www.salongcuong.net/VN/SH/utilities/slc.css" type="text/css">
+<style>
+        * { font-family:Arial; font-size:12px; }
+        .navbar span {font-family:Wingdings 3;font-size:20px;color:silver;cursor:hand}
+        #thumbnails img {cursor:hand;}
+		.imgdescription {font-family:Arial;font-size:14px;color:white;font-weight:bold;padding-top:20px}
+		
+    </style>
+   
+    <script> 
+        var steptimer = 5000
+		var gflag = 0
+        var dir = 'images/'
+        var imgArray = new Array
+                        (					   
+						    "DSCF0041_WEB.jpg?d=Phái &#273;òan SLC &#273;&#7863;t chân &#273;&#7871;n Qui Nh&#417;n",
+							"HPIM1212_WEB.jpg?d=Tr&#432;&#7899;c t&#432;&#7907;ng Vua Quang-Trung",
+							"HPIM1227_WEB.jpg?d=L&#7853;p T&#7845;n",
+							"HPIM1211_WEB.jpg?d=Ti&#7873;n-&#272;ình B&#7843;o Tàng Vi&#7879;n Quang-Trung",
+							"HPIM1231_WEB.jpg?d=Tr&#7889;ng Tây-S&#417;n",
+							"HPIM1205_WEB.jpg?d=H&#7853;u-Viên B&#7843;o Tàng Vi&#7879;n Quang-Trung",
+							"DSCF0057_WEB.jpg?d=Trong sân v&#7853;n &#273;&#7897;ng Qui Nh&#417;n",
+							"DSCF0008_WEB.jpg?d=&#272;&#7841;i di&#7879;n các phái &#273;oàn tham d&#7921; nh&#7853;n quà l&#432;u ni&#7879;m",
+							"DSCF0046_WEB.jpg?d=K&#7927; ni&#7879;m m&#7897;t chuy&#7871;n &#273;i v&#7873; mi&#7873;n &#273;&#7845;t võ"
+                        )
+						       
+       var count = 0
+        var maxln = imgArray.length
+        
+        function loadedPct()
+        {
+            preview.innerHTML = "<font color=white>Loading images ... " + Math.round(((++count)/maxln)*100) + "%</font>"        
+        }
+
+        var currIndex = -1
+        var timer
+        
+        function playSlides(d,a)
+        {
+            currIndex += parseInt(d)
+            
+            currIndex = (currIndex<0?maxln-1:currIndex>maxln-1?0:currIndex)
+        
+            status = currIndex
+            imgsrc = dir + imgArray[currIndex]
+            imgdes = imgArray[currIndex].split("?d=")[1]
+        
+            str  = '<img src="https://www.salongcuong.net/VN/SH/Slides/VietNam2006/'&#32;+&#32;dir&#32;+&#32;imgArray[currIndex]&#32;+&#32;'"><br>'
+            str += '<div class=imgdescription>' + imgdes + '</div>'
+        
+            preview.innerHTML = str
+            if (a) {timer = setTimeout('playSlides(1,true)', steptimer)}        
+        }
+
+        function showSlide(idx)
+        {
+            currIndex = idx
+            imgsrc = dir + imgArray[currIndex]
+            imgdes = imgArray[currIndex].split("?d=")[1]
+        
+            str  = '<img src="https://www.salongcuong.net/VN/SH/Slides/VietNam2006/'&#32;+&#32;dir&#32;+&#32;imgArray[currIndex]&#32;+&#32;'"><br>'
+            str += '<div class=imgdescription>' + imgdes + '</div>'
+        
+            preview.innerHTML = str
+        }
+
+        function chk_isSet(obj)
+        {
+            if (gflag==0) {
+                gflag=1
+                //obj.style.color="blue"
+                if (obj.id=='sp') obj.innerHTML = '<img src="images/button/stopButton.gif" onmouseover=hiLite(50,this) onmouseout=hiLite(100,this) style="filter:alpha(opacity=100)">'
+             } else {
+                gflag=0
+                //obj.style.color="silver"
+                if (obj.id=='sp') obj.innerHTML = '<img src="images/button/playButton.gif" onmouseover=hiLite(50,this) onmouseout=hiLite(100,this) style="filter:alpha(opacity=100)">'
+             }
+        }
+
+        function hiLite(opa,obj)
+        {
+			try {
+				obj.filters.alpha.opacity = opa
+			} catch (e) {
+				obj.style.MozOpacity = opa / 100
+			}
+        }
+		
+        function doPlayStop(obj,stp)
+        {
+            if (stp) gflag=stp
+            chk_isSet(obj)
+		
+            if (gflag==0)
+                clearTimeout(timer)
+            else
+                playSlides(1,true)
+        }
+				
+		
+        function init()
+        {
+			doPlayStop(sp)
+        }
+    </script>  
+</head>
+
+<body bgcolor="#004477" LINK="#FFFFFF" VLINK="#FFFFFF" ALINK="#FFFFFF" onload=init()>
+  <div align="center">
+    <table width="780" bgcolor="#004477" cellpadding="0" cellspacing="4" border="0">
+      <tbody>
+        <tr>
+          <td height="110" align="center">
+	        <img src="../../../../images/SLC_PageTitle_VN.jpg" width=800 height=104 alt="" border=0>
+	      </td>
+        </tr>
+
+        <tr>
+          <td valign="center" align="right">
+		  	   <a href="../../vn-activities.html" onMouseOver="document.MyImage1.src='./images/button/Return_mouseOver.jpg';" 
+			   onMouseOut="document.MyImage1.src='./images/button/Return_float.jpg';">
+			   <img src="images/button/Return_float.jpg" width=92 height=23 alt="" border=0 name="MyImage1"></a>
+		  </td>
+        </tr>
+
+		<tr>
+		  <td align=center height=50 style="font-size:16px;color:yellow" bgcolor="#003366">
+            Phái-&#273;oàn SLC t&#7841;i &#272;&#7841;i-H&#7897;i Qu&#7889;c-T&#7871; Võ-Thu&#7853;t C&#7893;-Truy&#7873;n K&#7923; I - Bình-&#272;&#7883;nh, Vi&#7879;t-Nam 2006
+		  </td>
+		</tr>
+    
+        <tr >
+          <td valign="center">
+		    <table border="0" height="600" cellpadding="0" cellspacing="12" bgcolor="#003366">
+  			  <tr>
+			    <td align=center>
+                  <div id=preview style="">Loading images ...</div>    
+    	        </td>
+		      </tr>
+    
+              <tr>
+			    <td height=20 align=center>
+                  <div class=navbar style="">
+            	  <span id=sb onclick="doPlayStop(sp,1);playSlides(-1)" isSet=0><img src="images/button/previousButton.gif" onmouseover=hiLite(50,this) onmouseout=hiLite(100,this) style="filter:alpha(opacity=100)" width="18" height="18" alt="Previous Slide" border="0"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            	  <span id=sp onclick="doPlayStop(this)" isSet=0><img src="images/button/playButton.gif" onmouseover=hiLite(50,this) onmouseout=hiLite(100,this) style="filter:alpha(opacity=100)" width="18" height="18" alt="Play/Stop" border="0"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            	  <span is=sn onclick="doPlayStop(sp,1);playSlides(1)" isSet=0><img src="images/button/nextButton.gif" onmouseover=hiLite(50,this) onmouseout=hiLite(100,this) style="filter:alpha(opacity=100)" width="18" height="18" alt="Next Slide" border="0"></span>
+        		  </div>
+    			</td>
+			  </tr>
+    
+              <tr>
+			    <td height=80 width="100%" align=center nowrap>
+                  <div id=thumbnails style="width:780;height:55px;overflow:auto;border:solid 0px gray">
+                    <script>
+                      var str=''
+                      for (i=0; i<imgArray.length; i++)
+                        str += '<img height=50 onload=loadedPct() onclick="doPlayStop(sp,1);showSlide(' +i+ ')" src="' + dir + imgArray[i] + '.jpg">&nbsp; '
+                      document.write(str)
+                    </script>
+                  </div>
+                </td>
+			  </tr>	   
+			  
+			  <!--tr>
+			    <td align="center" height="50">			  
+					<OBJECT width="320" height="45"	
+					CLASSID="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"
+					type="application/x-oleobject">	 					
+					<PARAM NAME="URL" VALUE="Reunion.mp3">
+					<PARAM name="PlayCount" value="9999">
+					<EMBED src="./Reunion.mp3" type="application/x-mplayer2" width="320" height="45" autoplay="true" loop="true"></EMBED>
+					</OBJECT>						  	  
+				</td>
+			  </tr-->
+			</table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
